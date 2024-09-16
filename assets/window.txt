@@ -1,0 +1,7 @@
+// Load the needed textures
+<texture name="earth" src="plugins/assets_atmosphere/images/earth.png">
+
+// Load the needed pages
+<page_2d name="atmosphere_page" displayed>
+	<content src="plugins/assets_atmosphere/gui_content.txt" sub_paged>
+</page_2d>

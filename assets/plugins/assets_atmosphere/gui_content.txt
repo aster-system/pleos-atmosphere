@@ -1,0 +1,72 @@
+<gui_object name="atmosphere_hub_navigation" type="scroller" visible>
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1 type=scale>
+	<width value=1/4 type=scale>
+	<x attach=left>
+	<y value=0 type=scale>
+</gui_object>
+<gui_object name="atmosphere_hub_navigation_home" type="text">
+	<border bottom=1 left=1 right=1 top=1>
+	<content font_size=40>Accueil</content>
+	<height value=40 type=pixel>
+	<parent name="atmosphere_hub_navigation">
+	<texture alignment=fit>
+	<width value=1 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=top>
+
+	<when event="overflighted">
+		<cursor type=pointing_hand_cursor>
+	</when>
+</gui_object>
+
+//***************************************************
+//
+//   HOME
+//
+//*************************************************** 
+
+<gui_object name="atmosphere_hub_body" visible>
+	<background_color red=0 green=0 blue=0>
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1 type=scale>
+	<texture name="earth" alignment=fit>
+	<width value=3/4 type=scale>
+	<x attach=right>
+	<y value=0 type=scale>
+
+	// Photo par WikiImages, via Pixabay, sous la license "license de contenu"
+	// Page de la license : https://pixabay.com/fr/service/license-summary/.
+	// Page de la photo : https://pixabay.com/fr/photos/terre-plan%C3%A8te-espace-monde-univers-11009/.
+	// Page de WikiImages : https://pixabay.com/fr/users/wikiimages-1897/.
+</gui_object>
+<gui_object name="atmosphere_hub_body_title" type="text">
+	<background_color red=255 green=255 blue=255 alpha=100>
+	<border bottom=3 left=3 right=3 top=3>
+	<content font_size=80>L'atmosphère</content>
+	<height value=80 type=pixel>
+	<parent name="atmosphere_hub_body">
+	<texture alignment=fit>
+	<width value=3/4 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=top offset=15>
+</gui_object>
+<gui_object name="atmosphere_hub_body_presentation" type="text">
+	<background_color red=255 green=255 blue=255 alpha=200>
+	<border bottom=3 left=3 right=3 top=3>
+	<content font_size=35>Il est difficile de gérer des données... sans moyen de gérer des données ¯\_(-_-)_/¯.</br>
+Pour cela, que ce soit dans n'importe quel langage de programmation, il existe un moyen</br>
+de faire ça facilement : les structures de données.</br></br>
+Les utiliser papier - crayon, c'est bien. Les utiliser avec Python ou le C++, c'est un peu</br>
+mieux. Cependant, les utiliser dans un logiciel dédié à leur compréhension, c'est le top.</br>
+Pour cela, Aster Système vous propose ce logiciel, adapté au programme de NSI terminale</br>
+comme aux cours de SAASF. Si vous ne venez d'aucun de ces deux médias, vous pouvez</br>
+quand même l'utiliser, pour en apprendre plus sur les structures de données.</br></br>
+Pour naviguer dans le logiciel, utiliser les boutons à gauche de la page.</content>
+	<height value=2/3 type=scale>
+	<parent name="atmosphere_hub_body">
+	<texture alignment=fit>
+	<width value=7/8 type=scale>
+	<x value=1/2 type=object_scale>
+	<y value=1/2 type=object_scale>
+</gui_object>
