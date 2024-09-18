@@ -1,15 +1,15 @@
-<gui_object name="atmosphere_hub_navigation" type="scroller" visible>
+<gui_object name="atmosphere_navigation" type="scroller" visible>
 	<border bottom=1 left=1 right=1 top=1>
 	<height value=1 type=scale>
 	<width value=1/4 type=scale>
 	<x attach=left>
 	<y value=0 type=scale>
 </gui_object>
-<gui_object name="atmosphere_hub_navigation_home" type="text">
+<gui_object name="atmosphere_navigation_home" type="text">
 	<border bottom=1 left=1 right=1 top=1>
 	<content font_size=40>Accueil</content>
 	<height value=40 type=pixel>
-	<parent name="atmosphere_hub_navigation">
+	<parent name="atmosphere_navigation">
 	<texture alignment=fit>
 	<width value=1 type=scale>
 	<x value=1/2 type=object_scale>
@@ -19,6 +19,106 @@
 		<cursor type=pointing_hand_cursor>
 	</when>
 </gui_object>
+<gui_object name="atmosphere_navigation_composition" type="text">
+	<border bottom=1 left=1 right=1 top=1>
+	<content font_size=40>Composition de l'atmosphère</content>
+	<height value=40 type=pixel>
+	<parent name="atmosphere_navigation">
+	<texture alignment=fit>
+	<width value=1 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom attached_object="atmosphere_navigation_home">
+
+	<when event="overflighted">
+		<cursor type=pointing_hand_cursor>
+	</when>
+</gui_object>
+
+//***************************************************
+//
+//   ATMOSPHERE COMPOSITION
+//
+//*************************************************** 
+
+<gui_object name="atmosphere_composition_body">
+	<background_color red=0 green=0 blue=0>
+	<border bottom=1 left=1 right=1 top=1>
+	<height value=1 type=scale>
+	<texture name="atmosphere_layers" alignment=fit_horizontally alignment_vertical=bottom>
+	<width value=3/4 type=scale>
+	<x attach=right>
+	<y value=0 type=scale>
+</gui_object>
+<gui_object name="atmosphere_composition_body_title" type="text">
+	<background_color red=255 green=255 blue=255 alpha=100>
+	<border bottom=3 left=3 right=3 top=3>
+	<content font_size=80>La composition de l'atmosphère</content>
+	<height value=80 type=pixel>
+	<parent name="atmosphere_composition_body">
+	<texture alignment=fit>
+	<width value=3/4 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=top offset=15>
+</gui_object>
+<gui_object name="atmosphere_composition_body_layer_bottom" type="object">
+	<background_color red=255 green=255 blue=255 alpha=100>
+	<border bottom=3 left=3 right=3 top=3>
+	<height value=60 type=pixel>
+	<parent name="atmosphere_composition_body">
+	<texture name="arrow_bottom" alignment=fit>
+	<width value=60 type=pixel>
+	<x value=1/5 type=object_scale>
+	<y attach=bottom attached_object="atmosphere_composition_body_title" offset=15>
+
+	<when event="overflighted">
+		<cursor type=pointing_hand_cursor>
+	</when>
+</gui_object>
+<gui_object name="atmosphere_composition_body_layer_title" type="text">
+	<background_color red=255 green=255 blue=255 alpha=100>
+	<border bottom=3 left=3 right=3 top=3>
+	<content font_size=60>La troposphère</content>
+	<height value=60 type=pixel>
+	<parent name="atmosphere_composition_body">
+	<texture alignment=fit>
+	<width value=1/2 type=scale>
+	<x value=1/2 type=object_scale>
+	<y attach=bottom attached_object="atmosphere_composition_body_title" offset=15>
+</gui_object>
+<gui_object name="atmosphere_composition_body_layer_top" type="object">
+	<background_color red=255 green=255 blue=255 alpha=100>
+	<border bottom=3 left=3 right=3 top=3>
+	<height value=60 type=pixel>
+	<parent name="atmosphere_composition_body">
+	<texture name="arrow_top" alignment=fit>
+	<width value=60 type=pixel>
+	<x value=4/5 type=object_scale>
+	<y attach=bottom attached_object="atmosphere_composition_body_title" offset=15>
+
+	<when event="overflighted">
+		<cursor type=pointing_hand_cursor>
+	</when>
+</gui_object>
+<gui_object name="atmosphere_composition_body_layer_navigation" type="scroller">
+	<background_color red=255 green=255 blue=255 alpha=100>
+	<border bottom=3 left=3 right=3 top=3>
+	<height value=2/3 type=scale>
+	<parent name="atmosphere_composition_body">
+	<texture alignment=fit>
+	<width value=1/5 type=scale>
+	<x attach=right offset=10>
+	<y attach=bottom attached_object="atmosphere_composition_body_layer_title" offset=15>
+</gui_object>
+<gui_object name="atmosphere_composition_body_layer_content" type="text">
+	<background_color red=255 green=255 blue=255 alpha=100>
+	<border bottom=3 left=3 right=3 top=3>
+	<height value=2/3 type=scale>
+	<parent name="atmosphere_composition_body">
+	<texture alignment=fit>
+	<width value=3/5 type=scale>
+	<x value=2/5 type=object_scale>
+	<y attach=bottom attached_object="atmosphere_composition_body_layer_title" offset=15>
+</gui_object>
 
 //***************************************************
 //
@@ -26,7 +126,7 @@
 //
 //*************************************************** 
 
-<gui_object name="atmosphere_hub_body" visible>
+<gui_object name="atmosphere_home_body" visible>
 	<background_color red=0 green=0 blue=0>
 	<border bottom=1 left=1 right=1 top=1>
 	<height value=1 type=scale>
@@ -40,31 +140,28 @@
 	// Page de la photo : https://pixabay.com/fr/photos/terre-plan%C3%A8te-espace-monde-univers-11009/.
 	// Page de WikiImages : https://pixabay.com/fr/users/wikiimages-1897/.
 </gui_object>
-<gui_object name="atmosphere_hub_body_title" type="text">
+<gui_object name="atmosphere_home_title" type="text">
 	<background_color red=255 green=255 blue=255 alpha=100>
 	<border bottom=3 left=3 right=3 top=3>
 	<content font_size=80>L'atmosphère</content>
 	<height value=80 type=pixel>
-	<parent name="atmosphere_hub_body">
+	<parent name="atmosphere_home_body">
 	<texture alignment=fit>
 	<width value=3/4 type=scale>
 	<x value=1/2 type=object_scale>
 	<y attach=top offset=15>
 </gui_object>
-<gui_object name="atmosphere_hub_body_presentation" type="text">
+<gui_object name="atmosphere_home_presentation" type="text">
 	<background_color red=255 green=255 blue=255 alpha=200>
 	<border bottom=3 left=3 right=3 top=3>
-	<content font_size=35>Il est difficile de gérer des données... sans moyen de gérer des données ¯\_(-_-)_/¯.</br>
-Pour cela, que ce soit dans n'importe quel langage de programmation, il existe un moyen</br>
-de faire ça facilement : les structures de données.</br></br>
-Les utiliser papier - crayon, c'est bien. Les utiliser avec Python ou le C++, c'est un peu</br>
-mieux. Cependant, les utiliser dans un logiciel dédié à leur compréhension, c'est le top.</br>
-Pour cela, Aster Système vous propose ce logiciel, adapté au programme de NSI terminale</br>
-comme aux cours de SAASF. Si vous ne venez d'aucun de ces deux médias, vous pouvez</br>
-quand même l'utiliser, pour en apprendre plus sur les structures de données.</br></br>
-Pour naviguer dans le logiciel, utiliser les boutons à gauche de la page.</content>
+	<content font_size=35>La Terre, c'est à dire la vie, est un système d'une extrême complexité, si bien qu'il</br>
+existe une aberrante quantité de champs d'études qui lui sont consacrés. Parmis eux, une d'entre</br>
+elles, l'aéronomie, étudie l'enveloppe gazeuse qui entoure la Terre : l'atmosphère.</br></br>
+En effet, elle est beaucoup plus variée et dynamique que ce que notre point de vue en tant que</br>
+simples humains nous laissent croire. Pourtant, elle est une des raisons de la vie sur Terre,</br>
+ainsi que du dynamisme de la planète.</content>
 	<height value=2/3 type=scale>
-	<parent name="atmosphere_hub_body">
+	<parent name="atmosphere_home_body">
 	<texture alignment=fit>
 	<width value=7/8 type=scale>
 	<x value=1/2 type=object_scale>

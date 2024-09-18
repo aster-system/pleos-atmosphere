@@ -43,6 +43,87 @@ namespace pleos {
 
         // Data_Structure_Page constructor
         Atmosphere_Page(scls::_Window_Advanced_Struct* window_struct, std::string name);
+        // Loads an object in a page from XML
+        virtual std::shared_ptr<scls::GUI_Object> __create_loaded_object_from_type(std::string object_name, std::string object_type, scls::GUI_Object* parent);
+
+        // Displays the atmospheric composition page
+        void display_composition_page();
+        // Displays the home page
+        void display_home_page();
+        // Hide everything in the page
+        void hide_all();
+
+        // Checks the composition events
+        void check_composition_events();
+        // Checks the navigation events
+        void check_navigation_events();
+        // Checks the tropospheric events
+        void check_tropospheric_events();
+        // Update the events in the page
+        virtual void update_event();
+
+        //******************
+        //
+        // "Atmosphere composition" page handle
+        //
+        //******************
+
+        // Loads the tropospheric composition page
+        void load_tropospheric_composition_page();
+        // Loads the tropospheric description page
+        void load_tropospheric_description_page();
+        // Loads the tropospheric page
+        void load_tropospheric_page();
+
+        // Unloads the tropospheric page
+        void unload_composition_layer_navigation(){a_composition_layer_navigation_buttons.clear();a_composition_layer_navigation.get()->reset();};
+
+    private:
+
+        // Struct representating the current state of the page
+        struct {
+            #define PLEOS_ATMOSPHERE_HOME 0
+            #define PLEOS_ATMOSPHERE_COMPOSITION 0
+
+            // Current page of the software
+            unsigned int current_page = PLEOS_ATMOSPHERE_HOME;
+
+            #define PLEOS_ATMOSPHERE_COMPOSITION_TROPOSPHERIC 0
+
+            // Current atmosphere of the atmospheric page software
+            unsigned int current_composition_atmosphere = PLEOS_ATMOSPHERE_COMPOSITION_TROPOSPHERIC;
+        } a_current_state;
+
+        // GUI Stuffs
+
+        // Page bodies
+
+        // "Atmosphere composition" body
+        std::shared_ptr<scls::GUI_Object> a_composition_body;
+        // "Atmosphere composition" layer navigation
+        std::shared_ptr<scls::GUI_Scroller> a_composition_layer_navigation;
+        std::vector<std::shared_ptr<scls::GUI_Text>> a_composition_layer_navigation_buttons;
+        // Home body
+        std::shared_ptr<scls::GUI_Object> a_home_body;
+
+        // Composition page buttons
+
+        // "Atmosphere composition" bottom button
+        std::shared_ptr<scls::GUI_Object> a_composition_bottom_button;
+        // "Atmosphere composition" top button
+        std::shared_ptr<scls::GUI_Object> a_composition_top_button;
+
+        // Navigation buttons
+
+        // "Atmosphere composition" navigation button
+        std::shared_ptr<scls::GUI_Text> a_navigation_composition;
+        // Home navigation button
+        std::shared_ptr<scls::GUI_Text> a_navigation_home;
+
+        // Text and text input
+
+        // "Atmosphere composition" content text
+        std::shared_ptr<scls::GUI_Text> a_composition_layer_content;
     };
 
     class __Temp_Pleos_Window : public scls::Window {

@@ -1,4 +1,7 @@
 // Load the needed textures
+<texture name="arrow_bottom" src="plugins/assets_atmosphere/images/arrow_bottom.png">
+<texture name="arrow_top" src="plugins/assets_atmosphere/images/arrow_top.png">
+<texture name="atmosphere_layers" src="plugins/assets_atmosphere/images/atmosphere_layers.png">
 <texture name="earth" src="plugins/assets_atmosphere/images/earth.png">
 
 // Load the needed pages
