@@ -9,4 +9,4 @@ This Software is mostly made to help teachers and students with french scientifi
 ### Pages
 #### 19.09.24 version :
 - Atmosphere presentation
-- Primitive atmosphere presentation
+  - Tropospheric presentation
